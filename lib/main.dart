@@ -53,7 +53,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 cellSize:Size(MediaQuery.of(context).size.width, 175),
                 padding:EdgeInsets.all(10.0),
               ),
-            )
+            ),
+            Container(
+              child: SimpleFoldingCell(
+                frontWidget: FrontWidget(),
+                innerTopWidget: InnerTopWidget(),
+                innerBottomWidget: InnerBottomWidget(),
+                cellSize:Size(MediaQuery.of(context).size.width, 175),
+                padding:EdgeInsets.all(10.0),
+              ),
+            ),
           ],
         ),
       )
@@ -73,6 +82,40 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(15.0),
                 color: Color(0xff6a53a4),
               ),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Today',
+                              style: TextStyle(
+                                color: Color(0xFFc8b6ea),
+                                fontSize: 20.0
+                              ),
+                            ),
+                          )
+                        ),
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('09:15 AM',
+                              style: TextStyle(
+                                color: Color(0xFFc8b6ea),
+                                fontSize: 20.0
+                              ),
+                            ),
+                          )
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
           Expanded(
@@ -82,6 +125,53 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
               ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Fundamel and Business",
+                        style:TextStyle(
+                          color: Color(0xff6a53a4),
+                          fontSize: 20.0,
+                          fontWeight:FontWeight.bold,
+                        )
+                      ),
+                    )
+                  ),
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              FontAwesomeIcons.mapMarkedAlt,
+                              color: new Color(0xffF7B928),
+                              size: 20.0
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Fundamel and Business",
+                              style:TextStyle(
+                                color: Color(0xffed1bf7),
+                                fontSize: 16.0,
+                                fontWeight:FontWeight.bold,
+                              )
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ),
+                ]
+              )
             ),
           ),
         ],
@@ -89,11 +179,76 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Container InnerTopWidget() {
-    
+  Container InnerBottomWidget() {
+    return Container(
+      color: Colors.white,
+    );
   }
 
-  Container InnerBottomWidget() {
-    
+  Container InnerTopWidget() {
+    return Container(
+      color: Color(0xff6a53a4),
+      alignment: Alignment.center,
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            //Heading
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Details",
+                  style:TextStyle(
+                    color: Color(0xffed1bf7),
+                    fontSize: 16.0,
+                    fontWeight:FontWeight.bold,
+                  )
+                ),
+              ),
+            ),
+
+            //tilte
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        FontAwesomeIcons.mapMarkedAlt,
+                        color: new Color(0xffF7B928),
+                        size: 20.0
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Fundamel",
+                        style:TextStyle(
+                          color: Color(0xffed1bf7),
+                          fontSize: 16.0,
+                          fontWeight:FontWeight.bold,
+                        )
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //Duration
+            Container(),
+
+            //Room
+            Container(),
+
+            //Priority
+            Container(),
+          ],
+        ),
+      ),
+    );
   }
 }
